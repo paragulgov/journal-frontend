@@ -1,13 +1,13 @@
 import type { NextPage } from 'next';
 import Layout from '../src/layouts/Layout';
 import SEO from '../src/components/SEO';
-import MainScreen from '../src/screens/main/MainScreen';
+import PopularScreen from '../src/screens/popular/PopularScreen';
 
 const Home: NextPage = () => {
   return (
     <Layout>
       <SEO title="Главная" />
-      <MainScreen />
+      <PopularScreen />
     </Layout>
   );
 };
