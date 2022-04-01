@@ -3,7 +3,7 @@ import { Box } from '@mui/material';
 
 const Header: React.FC = () => {
   return (
-    <Box component="header" sx={{ height: 60 }}>Header</Box>
+    <Box component="header" sx={{ height: 60, backgroundColor: 'primary.main' }}>Header</Box>
   );
 };
 

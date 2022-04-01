@@ -1,17 +1,17 @@
 import { Box } from '@mui/material';
 import React from 'react';
-import Header from '../components/Header';
-import LeftColumn from '../components/LeftColumn';
-import RightColumn from '../components/RightColumn';
+import Header from './Header';
+import Navbar from './Navbar/Navbar';
+import CommentsSidebar from './CommentsSidebar';
 
 const Layout: React.FC = ({ children }) => {
   return (
     <>
       <Header />
       <Box sx={{ flex: '1 0 auto', display: 'flex' }}>
-        <LeftColumn />
+        <Navbar />
         <main>{children}</main>
-        <RightColumn />
+        <CommentsSidebar />
       </Box>
     </>
   );

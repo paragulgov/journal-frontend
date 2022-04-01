@@ -1,6 +1,7 @@
 import { Box, Button, List, Paper } from '@mui/material';
 import { latestPosts } from '../../../data/mockLatestPosts';
 import LatestPostItem from './LatestPostsItem';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const LatestPosts = () => {
   return (
@@ -13,7 +14,8 @@ const LatestPosts = () => {
             );
           })}
         </List>
-        <Button sx={{ml: 1, mb: 1}} variant="text">Показать еще</Button>
+        <Button size="large" variant="text" endIcon={<KeyboardArrowDownIcon />} sx={{ ml: 1, mb: 1, pr: 1, pl: 1 }}>Показать
+          ещё</Button>
       </Paper>
     </Box>
   );

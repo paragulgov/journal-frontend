@@ -9,8 +9,6 @@ export const theme = createTheme({
         },
         body: {
           minWidth: 375,
-          color: '#fff',
-          background: '#373737',
           overflowX: 'hidden',
         },
         a: {
@@ -28,6 +26,9 @@ export const theme = createTheme({
         },
       },
     },
+  },
+  palette: {
+    mode: 'dark'
   },
   typography: {
     button: {

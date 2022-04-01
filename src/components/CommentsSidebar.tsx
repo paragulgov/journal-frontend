@@ -1,7 +1,7 @@
-import { Box } from '@mui/material';
 import React from 'react';
+import { Box } from '@mui/material';
 
-const LeftColumn: React.FC = () => {
+const CommentsSidebar: React.FC = () => {
   return (
     <Box component="aside" sx={{
       width: 200,
@@ -11,9 +11,9 @@ const LeftColumn: React.FC = () => {
       flexShrink: 0,
     }}
     >
-      Sidebar
+      Comments
     </Box>
-  );
-};
+  )
+}
 
-export default LeftColumn;
+export default CommentsSidebar;
