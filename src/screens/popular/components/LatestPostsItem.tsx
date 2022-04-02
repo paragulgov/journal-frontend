@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import { Typography, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import Link from 'next/link';
 
@@ -19,7 +19,7 @@ const LatestPostItem: React.FC<LatestPostItemProps> = ({ id, text, commentsCount
           </ListItemText>
           <ListItemIcon sx={{ display: 'flex', alignItems: 'center' }}>
             <ChatBubbleOutlineIcon fontSize="small" sx={{ mr: 1 }} />
-            <Box component="span" sx={{ fontSize: 12 }}>{commentsCount}</Box>
+            <Typography variant="overline" component="span" sx={{ fontSize: 12 }}>{commentsCount}</Typography>
           </ListItemIcon>
         </ListItemButton>
       </a>

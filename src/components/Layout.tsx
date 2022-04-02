@@ -2,7 +2,7 @@ import { Box } from '@mui/material';
 import React from 'react';
 import Header from './Header';
 import Navbar from './Navbar/Navbar';
-import CommentsSidebar from './CommentsSidebar';
+import SidebarComments from './SidebarComments/SidebarComments';
 
 const Layout: React.FC = ({ children }) => {
   return (
@@ -11,7 +11,7 @@ const Layout: React.FC = ({ children }) => {
       <Box sx={{ flex: '1 0 auto', display: 'flex' }}>
         <Navbar />
         <main>{children}</main>
-        <CommentsSidebar />
+        <SidebarComments />
       </Box>
     </>
   );
