@@ -26,6 +26,13 @@ export const theme = createTheme({
         },
       },
     },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: '8px'
+        }
+      }
+    }
   },
   palette: {
     mode: 'dark'

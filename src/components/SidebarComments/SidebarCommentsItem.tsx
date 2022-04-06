@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import UserAvatarName from '../UserAvatarName';
 import Link from 'next/link';
+import { HoverTypography } from '../../styles/commonStyles';
 
 interface CommentsItemProps {
   user: string;
@@ -17,39 +18,16 @@ const SidebarCommentsItem: React.FC<CommentsItemProps> = ({ user, comment, post 
       </Box>
       <Link href="/">
         <a>
-          <Typography
-            sx={[
-              { color: 'text.secondary', mb: 1 },
-              (theme) => ({
-                '&:hover': {
-                  color: 'secondary.main',
-                },
-                transition: theme.transitions.create(['color'], {
-                  duration: theme.transitions.duration.standard,
-                }),
-              }),
-            ]}
-          >
+          <HoverTypography sx={{ color: 'text.secondary', mb: 1 }}>
             {comment}
-          </Typography>
+          </HoverTypography>
         </a>
       </Link>
       <Link href="/">
         <a>
-          <Typography
-            fontWeight={700}
-            fontSize={12}
-            sx={(theme) => ({
-              '&:hover': {
-                color: 'secondary.main',
-              },
-              transition: theme.transitions.create(['color'], {
-                duration: theme.transitions.duration.standard,
-              }),
-            })}
-          >
+          <HoverTypography fontWeight={700} fontSize={12}>
             {post}
-          </Typography>
+          </HoverTypography>
         </a>
       </Link>
     </Box>
