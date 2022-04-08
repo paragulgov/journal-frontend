@@ -1,7 +1,8 @@
 import { Container, Stack } from '@mui/material';
 import React from 'react';
 import LatestPosts from './components/LatestPosts';
-import PostCard from '../../components/PostCard/PostCard';
+import PostCard from '../../components/post-card/PostCard';
+import { posts } from '../../data/mockPosts';
 
 const PopularScreen: React.FC = () => {
   return (
@@ -9,9 +10,20 @@ const PopularScreen: React.FC = () => {
       <Stack spacing={3}>
         <LatestPosts />
 
-        <PostCard />
-        <PostCard />
-        <PostCard />
+        {posts.map(({ id, title, subtitle, img, date, likesCount, user }) => {
+          return (
+            <PostCard
+              key={id}
+              id={id}
+              title={title}
+              subtitle={subtitle}
+              img={img}
+              date={date}
+              likesCount={likesCount}
+              user={user}
+            />
+          );
+        })}
       </Stack>
     </Container>
   );

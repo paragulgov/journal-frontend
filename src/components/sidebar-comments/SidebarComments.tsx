@@ -8,7 +8,7 @@ const SidebarComments: React.FC = () => {
     <Box component="aside" sx={{
       width: 300,
       position: 'sticky',
-      top: 60,
+      top: 0,
       height: 'calc(100vh - 60px)',
       flexShrink: 0,
     }}

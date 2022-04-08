@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
          sx={{
            width: 200,
            position: 'sticky',
-           top: 60,
+           top: 0,
            height: 'calc(100vh - 60px)',
            flexShrink: 0,
          }}

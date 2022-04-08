@@ -8,14 +8,18 @@ import BookmarkAddIcon from '@mui/icons-material/BookmarkAdd';
 import BookmarkRemoveIcon from '@mui/icons-material/BookmarkRemove';
 import ShareIcon from '@mui/icons-material/Share';
 
-const PostCardActions = () => {
+interface PostCardActionsProps {
+  likesCount: number
+}
+
+const PostCardActions: React.FC<PostCardActionsProps> = ({likesCount}) => {
   return (
     <Box>
-      <Stack direction="row">
+      <Stack direction="row" spacing={2}>
         <Button color="inherit" startIcon={<CommentIcon />}>
           <Link href="/">
             <a>
-              254
+              {likesCount}
             </a>
           </Link>
         </Button>

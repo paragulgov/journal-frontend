@@ -1,11 +1,11 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme } from '@mui/material/styles';
 
 export const theme = createTheme({
   components: {
     MuiCssBaseline: {
       styleOverrides: {
         '*': {
-          boxSizing: 'border-box'
+          boxSizing: 'border-box',
         },
         body: {
           minWidth: 375,
@@ -16,7 +16,7 @@ export const theme = createTheme({
           textDecoration: 'none',
         },
         main: {
-          flexGrow: 1
+          flexGrow: 1,
         },
         '#__next': {
           position: 'relative',
@@ -29,13 +29,39 @@ export const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: '8px'
+          borderRadius: 8,
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          borderRadius: 8
         }
       }
-    }
+    },
+    MuiMenu: {
+      styleOverrides: {
+        list: {
+          padding: 6,
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          borderRadius: 6,
+          padding: '6px 10px',
+          marginBottom: 4,
+          '&:last-child': {
+            marginBottom: 0,
+          },
+        },
+      },
+    },
   },
   palette: {
-    mode: 'dark'
+    mode: 'dark',
   },
   typography: {
     button: {
