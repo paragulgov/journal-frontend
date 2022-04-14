@@ -8,7 +8,7 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import ListIcon from '@mui/icons-material/List';
 import CheckIcon from '@mui/icons-material/Check';
-import internet from "../../assets/categories/icons/internet.webp";
+import internet from "../../../public/assets/categories/icons/internet.webp";
 
 const Navbar: React.FC = () => {
   return (

@@ -11,7 +11,7 @@ interface LatestPostItemProps {
 
 const LatestPostItem: React.FC<LatestPostItemProps> = ({ id, text, commentsCount }) => {
   return (
-    <Link href={`/`}>
+    <Link href="/">
       <a>
         <ListItemButton>
           <ListItemText>

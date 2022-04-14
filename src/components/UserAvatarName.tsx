@@ -8,7 +8,7 @@ interface UserAvatarNameProps {
 
 const UserAvatarName: React.FC<UserAvatarNameProps> = ({ name }) => {
   return (
-    <Link href="">
+    <Link href="/">
       <a>
         <Box
           display="flex"

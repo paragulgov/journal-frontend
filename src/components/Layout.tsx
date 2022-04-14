@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import React from 'react';
-import Header from './Header';
+import Header from './header/Header';
 import Navbar from './navbar/Navbar';
 import SidebarComments from './sidebar-comments/SidebarComments';
 
