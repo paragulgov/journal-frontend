@@ -9,7 +9,7 @@ const Header: React.FC = () => {
       height: 60,
       backgroundColor: 'primary.dark',
     }}>
-      <Container maxWidth="xl" sx={{
+      <Container maxWidth={false} sx={{
         height: '100%',
         display: 'flex',
         justifyContent: 'space-between'

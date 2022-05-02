@@ -1,10 +1,12 @@
 import { Container, Stack } from '@mui/material';
 import React from 'react';
+import { observer } from 'mobx-react-lite';
 import LatestPosts from './components/LatestPosts';
 import PostCard from '../../components/post-card/PostCard';
 import { posts } from '../../data/mockPosts';
 
-const PopularScreen: React.FC = () => {
+const PopularScreen: React.FC = observer(() => {
+
   return (
     <Container maxWidth="md" sx={{ mt: 2 }}>
       <Stack spacing={3}>
@@ -27,6 +29,6 @@ const PopularScreen: React.FC = () => {
       </Stack>
     </Container>
   );
-};
+});
 
 export default PopularScreen;
