@@ -1,4 +1,6 @@
-export interface SidebarComment {
+export type AppModals = 'login'
+
+export interface ISidebarComment {
   id: number,
   user: string,
   comment: string,

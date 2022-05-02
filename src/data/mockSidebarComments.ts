@@ -1,6 +1,6 @@
-import { SidebarComment } from '../modules/app/types/AppTypes';
+import { ISidebarComment } from '../modules/app/types/AppTypes';
 
-export const sidebarComments: SidebarComment[] = [
+export const sidebarComments: ISidebarComment[] = [
   {
     id: 1,
     user: 'Артем',
