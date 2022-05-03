@@ -31,14 +31,21 @@ export const theme = createTheme({
         root: {
           borderRadius: 8,
         },
+        text: {
+          backgroundColor: 'transparent',
+          transition: 'all .4s ease',
+          '&:hover': {
+            backgroundColor: 'transparent',
+          },
+        },
       },
     },
     MuiPaper: {
       styleOverrides: {
         root: {
-          borderRadius: 8
-        }
-      }
+          borderRadius: 8,
+        },
+      },
     },
     MuiMenu: {
       styleOverrides: {

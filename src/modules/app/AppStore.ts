@@ -4,6 +4,7 @@ import { AppModals } from './types/AppTypes';
 export class AppStore {
   modalOpen: Record<AppModals, boolean> = {
     login: false,
+    register: false
   };
 
   constructor() {

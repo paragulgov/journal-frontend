@@ -4,6 +4,7 @@ import { Box, Button } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
 import LoginModal from '../../screens/auth/login/LoginModal';
 import { useRootStore } from '../../base/hooks/useRootStore';
+import RegisterModal from '../../screens/auth/register/RegisterModal';
 
 const HeaderGuest: React.FC = observer(() => {
   const { appStore } = useRootStore();
@@ -11,6 +12,10 @@ const HeaderGuest: React.FC = observer(() => {
   // Handles
   const handleToggleLoginModal = () => {
     appStore.setModalOpen('login', !appStore.modalOpen.login);
+  };
+
+  const handleToggleRegisterModal = () => {
+    appStore.setModalOpen('register', !appStore.modalOpen.register);
   };
 
   // Renders
@@ -29,6 +34,7 @@ const HeaderGuest: React.FC = observer(() => {
       </Box>
 
       <LoginModal open={appStore.modalOpen.login} onClose={handleToggleLoginModal} />
+      <RegisterModal open={appStore.modalOpen.register} onClose={handleToggleRegisterModal} />
     </>
   );
 });

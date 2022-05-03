@@ -1,4 +1,4 @@
-export type AppModals = 'login'
+export type AppModals = 'login' | 'register'
 
 export interface ISidebarComment {
   id: number,
