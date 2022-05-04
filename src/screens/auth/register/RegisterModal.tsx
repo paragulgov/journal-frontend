@@ -9,23 +9,58 @@ interface IRegisterModalProps extends Omit<ModalProps, 'children'> {
 }
 
 const RegisterModal: React.FC<IRegisterModalProps> = observer(props => {
-  const { appStore } = useRootStore();
+  const { appStore, authStore } = useRootStore();
 
+  // Handlers
   const handleOpenRegisterModal = () => {
     appStore.setModalOpen('login', true);
     appStore.setModalOpen('register', false);
   };
 
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+
+    authStore.setValues({
+      ...authStore.values,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (event: React.FormEvent<EventTarget>) => {
+    event.preventDefault();
+    authStore.register();
+  };
+
+  // Renders
   return (
     <Modal disableEscapeKeyDown {...props}>
-      <Stack direction="column" spacing={2}>
+      <Stack component="form" onSubmit={handleSubmit} direction="column" spacing={2}>
         <Typography variant="h6">Регистрация</Typography>
-        <TextField placeholder="Имя аккаунта" />
-        <TextField placeholder="Пароль" />
-        <TextField placeholder="Повторите пароль" />
-        <Button variant="contained" color="primary" disabled={false}>Зарегистрироваться</Button>
+
+        <TextField
+          name="username"
+          placeholder="Имя аккаунта"
+          onChange={handleChange}
+          value={authStore.values.username}
+        />
+        <TextField
+          name="password"
+          placeholder="Пароль"
+          onChange={handleChange}
+          value={authStore.values.password}
+        />
+
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          disabled={authStore.disabledButton}
+        >
+          Зарегистрироваться
+        </Button>
+
         <Box>
-          <TextButton onClick={handleOpenRegisterModal} sx={{ p: 0 }}>
+          <TextButton onClick={handleOpenRegisterModal}>
             <Typography variant="body2">
               Войти в аккаунт
             </Typography>

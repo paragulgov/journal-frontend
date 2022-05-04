@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, IconButton, Menu, Typography } from '@mui/material';
+import { Avatar, Box, IconButton, Menu, Typography } from '@mui/material';
 import Image from 'next/image';
 import DescriptionIcon from '@mui/icons-material/Description';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
@@ -22,8 +22,14 @@ const HeaderAuth: React.FC = () => {
   return (
     <Box display="flex" alignItems="center">
       <IconButton onClick={handleClick} disableRipple>
-        <Image style={{ borderRadius: 8 }} src="/assets/categories/icons/internet.webp" width={40} height={40}
-               alt="Аватарка" />
+        {/*<Image*/}
+        {/*  style={{ borderRadius: 8 }}*/}
+        {/*  src="/assets/categories/icons/internet.webp"*/}
+        {/*  width={40}*/}
+        {/*  height={40}*/}
+        {/*  alt="Аватарка"*/}
+        {/*/>*/}
+        <Avatar>R</Avatar>
       </IconButton>
 
       <Menu

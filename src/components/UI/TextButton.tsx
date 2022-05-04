@@ -4,7 +4,7 @@ import React from 'react';
 interface ITextButtonProps extends Omit<ButtonProps, 'variant'> {
 }
 
-const TextButton: React.FC<ITextButtonProps> = ({ children, ...rest }) => {
+const TextButton: React.FC<ITextButtonProps> = ({ children, sx, ...rest }) => {
   return (
     <Button
       variant="text"
@@ -14,6 +14,7 @@ const TextButton: React.FC<ITextButtonProps> = ({ children, ...rest }) => {
         '&:hover': {
           color: 'secondary.main',
         },
+        ...sx,
       }}
       {...rest}
     >
