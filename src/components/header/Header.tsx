@@ -8,7 +8,6 @@ import { useRootStore } from '../../base/hooks/useRootStore';
 
 const Header: React.FC = observer(() => {
   const { authStore } = useRootStore();
-  const { isAuth } = authStore;
 
   return (
     <Box component="header" sx={{
@@ -22,7 +21,7 @@ const Header: React.FC = observer(() => {
       }}>
         <HeaderLeft />
 
-        {isAuth ? <HeaderAuth /> : <HeaderGuest />}
+        {authStore.isAuth ? <HeaderAuth /> : <HeaderGuest />}
       </Container>
     </Box>
   );

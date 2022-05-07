@@ -20,8 +20,8 @@ const RegisterModal: React.FC<IRegisterModalProps> = observer(props => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
 
-    authStore.setValues({
-      ...authStore.values,
+    authStore.setRegisterValues({
+      ...authStore.registerValues,
       [name]: value,
     });
   };
@@ -41,20 +41,21 @@ const RegisterModal: React.FC<IRegisterModalProps> = observer(props => {
           name="username"
           placeholder="Имя аккаунта"
           onChange={handleChange}
-          value={authStore.values.username}
+          value={authStore.registerValues.username}
         />
         <TextField
+          type="password"
           name="password"
           placeholder="Пароль"
           onChange={handleChange}
-          value={authStore.values.password}
+          value={authStore.registerValues.password}
         />
 
         <Button
           type="submit"
           variant="contained"
           color="primary"
-          disabled={authStore.disabledButton}
+          disabled={authStore.disabledRegisterButton}
         >
           Зарегистрироваться
         </Button>

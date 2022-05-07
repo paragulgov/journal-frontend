@@ -1,16 +1,16 @@
 import { IUserModel } from '../../user/types/UserTypes';
 
-export interface IRegisterValues {
+export interface ILoginValues {
   username: string;
   password: string;
 }
 
-export interface IRegisterDto {
+export interface ILoginDto {
   username: string;
   password: string;
 }
 
-export interface IRegisterModel {
+export interface ILoginModel {
   userInfo: IUserModel;
   token: string;
 }
