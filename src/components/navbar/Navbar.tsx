@@ -19,6 +19,7 @@ const Navbar: React.FC = () => {
            top: 0,
            height: 'calc(100vh - 60px)',
            flexShrink: 0,
+           marginTop: -2
          }}
     >
       <Box component="nav" sx={{ m: 2 }}>

@@ -1,11 +1,15 @@
 import React from 'react';
 import { Box, Button, IconButton, TextField } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
 import Image from 'next/image';
 import Link from 'next/link';
-import SearchIcon from '@mui/icons-material/Search';
+import { observer } from 'mobx-react-lite';
+import { useRootStore } from '../../base/hooks/useRootStore';
 
-const HeaderLeft: React.FC = () => {
+const HeaderLeft: React.FC = observer(() => {
+  const { authStore } = useRootStore();
+
   return (
     <Box display="flex" alignItems="center">
       <IconButton sx={{ color: 'black', mr: 2, display: { sm: 'none' } }}>
@@ -36,12 +40,18 @@ const HeaderLeft: React.FC = () => {
               background: 'rgb(0 0 0 / 15%)',
             },
           },
-          mr: 2
+          mr: 2,
         }}
       />
-      <Button variant="contained" color="primary" sx={{ '&:hover': { background: '#90caf9' } }}>Новая запись</Button>
+
+      {authStore.isAuth && (
+        <Link href="/write">
+          <Button variant="contained" color="primary" sx={{ '&:hover': { background: '#90caf9' } }}>Новая
+            запись</Button>
+        </Link>
+      )}
     </Box>
   );
-};
+});
 
 export default HeaderLeft;

@@ -8,7 +8,7 @@ import { posts } from '../../data/mockPosts';
 const PopularScreen: React.FC = observer(() => {
 
   return (
-    <Container maxWidth="md" sx={{ mt: 2 }}>
+    <Container maxWidth="md">
       <Stack spacing={3}>
         <LatestPosts />
 

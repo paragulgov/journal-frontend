@@ -11,6 +11,7 @@ const SidebarComments: React.FC = () => {
       top: 0,
       height: 'calc(100vh - 60px)',
       flexShrink: 0,
+      marginTop: -2
     }}
     >
       <Box sx={{ m: 2 }}>
