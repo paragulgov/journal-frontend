@@ -19,7 +19,6 @@ export class CategoriesStore {
     this.categoriesService.getAll()
       .then((res) => {
         this.setCategories(res);
-        this.categories = res;
       });
   };
 

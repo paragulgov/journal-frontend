@@ -6,13 +6,14 @@ interface ILoaderProps {
 }
 
 const Loader: React.FC<ILoaderProps> = ({ fullHeight = false }) => {
-  const renderApp = () => {
-    return <CircularProgress />;
-  };
-
   return (
-    <Box sx={fullHeight ? { display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' } : {}}>
-      {renderApp()}
+    <Box sx={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      minHeight: fullHeight ? '100vh' : '100%',
+    }}>
+      <CircularProgress />
     </Box>
   );
 };

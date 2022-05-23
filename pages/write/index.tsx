@@ -1,13 +1,13 @@
 import type { NextPage } from 'next';
 import SEO from '../../src/components/SEO';
 import Layout from '../../src/components/Layout';
-import WriteNewScreen from '../../src/screens/write/WriteNewScreen';
+import WriteScreen from '../../src/screens/write/WriteScreen';
 
 const WriteNew: NextPage = () => {
   return (
     <Layout>
       <SEO title="Новая статья" />
-      <WriteNewScreen />
+      <WriteScreen />
     </Layout>
   );
 };

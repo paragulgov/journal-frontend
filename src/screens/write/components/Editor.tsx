@@ -5,7 +5,7 @@ import Header from '@editorjs/header';
 
 interface IEditorProps {
   handleChange: (value: OutputBlockData[]) => void;
-  initialValue?: OutputBlockData[];
+  initialValue: OutputBlockData[];
 }
 
 const Editor: React.FC<IEditorProps> = observer(props => {
@@ -15,18 +15,22 @@ const Editor: React.FC<IEditorProps> = observer(props => {
   useEffect(() => {
     const editor = new EditorJS({
       holder: 'editorjs',
-      // data: {
-      //   blocks: initialValue || [],
-      // },
+      data: {
+        blocks: initialValue,
+      },
       placeholder: 'Введите текст вашей статьи',
       async onChange() {
         const { blocks } = await editor.save();
         handleChange(blocks);
       },
       tools: {
-        header: Header
-      }
+        header: Header,
+      },
     });
+
+    return () => {
+      editor.isReady.then(() => editor.destroy());
+    };
   }, []);
 
   // Renders
