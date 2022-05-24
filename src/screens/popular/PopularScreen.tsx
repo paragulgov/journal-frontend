@@ -1,27 +1,34 @@
+import React, { useEffect } from 'react';
 import { Container, Stack } from '@mui/material';
-import React from 'react';
 import { observer } from 'mobx-react-lite';
 import LatestPosts from './components/LatestPosts';
 import PostCard from '../../components/post-card/PostCard';
-import { posts } from '../../data/mockPosts';
+import { useRootStore } from '../../base/hooks/useRootStore';
 
 const PopularScreen: React.FC = observer(() => {
+  const { popularStore } = useRootStore();
 
+  // Effects
+  useEffect(() => {
+    popularStore.getPopular();
+  }, []);
+
+  // Renders
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="md" sx={{pb: 1}}>
       <Stack spacing={3}>
         <LatestPosts />
 
-        {posts.map(({ id, title, subtitle, img, date, likesCount, user }) => {
+        {popularStore.popularArticles.map(({ id, title, subtitle, user, category, createdAt }) => {
           return (
             <PostCard
               key={id}
               id={id}
               title={title}
               subtitle={subtitle}
-              img={img}
-              date={date}
-              likesCount={likesCount}
+              img={'https://via.placeholder.com/1280x720'}
+              date={createdAt}
+              likesCount={99}
               user={user}
             />
           );

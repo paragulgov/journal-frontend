@@ -1,28 +1,23 @@
 import { Box } from '@mui/material';
 import UserAvatarName from '../UserAvatarName';
-import Link from 'next/link';
 import React from 'react';
-import { HoverTypography } from '../../styles/commonStyles';
 import PostCardMenu from './PostCardMenu';
+import { IUserModel } from '../../modules/user/types/UserTypes';
+import ArticleDate from '../ArticleDate';
 
 interface PostCardHeaderProps {
-  user: string;
+  id: number;
+  user: IUserModel;
   date: string;
 }
 
-const PostCardHeader: React.FC<PostCardHeaderProps> = ({ user, date }) => {
+const PostCardHeader: React.FC<PostCardHeaderProps> = ({ id, user, date }) => {
 
   return (
     <Box display="flex" alignItems="center" mb={2}>
-      <UserAvatarName name={user} />
+      <UserAvatarName name={user.username} />
 
-      <Link href="/">
-        <a>
-          <HoverTypography sx={{ color: 'text.secondary', ml: 3 }}>
-            {date}
-          </HoverTypography>
-        </a>
-      </Link>
+      <ArticleDate id={id} date={date} />
 
       <Box flexGrow={1} />
 

@@ -2,11 +2,11 @@ import React from 'react';
 import { Box, Avatar, Typography } from '@mui/material';
 import Link from 'next/link';
 
-interface UserAvatarNameProps {
+interface IUserAvatarNameProps {
   name: string;
 }
 
-const UserAvatarName: React.FC<UserAvatarNameProps> = ({ name }) => {
+const UserAvatarName: React.FC<IUserAvatarNameProps> = ({ name }) => {
   return (
     <Link href="/">
       <a>

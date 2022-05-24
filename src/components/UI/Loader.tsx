@@ -13,7 +13,7 @@ const Loader: React.FC<ILoaderProps> = ({ fullHeight = false }) => {
       justifyContent: 'center',
       minHeight: fullHeight ? '100vh' : '100%',
     }}>
-      <CircularProgress />
+      <CircularProgress thickness={5} />
     </Box>
   );
 };

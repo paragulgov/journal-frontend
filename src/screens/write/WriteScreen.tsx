@@ -8,7 +8,7 @@ import { useRootStore } from '../../base/hooks/useRootStore';
 import Loader from '../../components/UI/Loader';
 
 // @ts-ignore
-const Editor = dynamic(() => import('./components/Editor').then((e) => e.default), { ssr: false });
+const Editor = dynamic(() => import('./components/Editor').then(e => e.default), { ssr: false });
 
 const WriteScreen: React.FC = observer(() => {
   const { writeStore, categoriesStore } = useRootStore();
