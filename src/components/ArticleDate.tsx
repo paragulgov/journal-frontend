@@ -10,8 +10,8 @@ interface IArticleDateProps {
 const ArticleDate: React.FC<IArticleDateProps> = ({ id, date }) => {
   return (
     <Link href={`/article/${id}`}>
-      <a>
-        <HoverTypography sx={{ color: 'text.secondary', ml: 3 }}>
+      <a style={{ marginLeft: 24 }}>
+        <HoverTypography sx={{ color: 'text.secondary' }}>
           {date}
         </HoverTypography>
       </a>

@@ -6,6 +6,7 @@ import { observer } from 'mobx-react-lite';
 import { useRootStore } from '../../base/hooks/useRootStore';
 import Loader from '../../components/UI/Loader';
 import ArticleFooter from './components/ArticleFooter';
+import Comments from './components/Comments';
 
 // @ts-ignore
 const ArticleContent = dynamic(() => import('./components/ArticleContent').then(e => e.default), { ssr: false });
@@ -33,16 +34,18 @@ const ArticleScreen = observer(() => {
   }
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="md">
       <Paper sx={{ color: '#fff', padding: 5, borderRadius: 2, mb: 2 }}>
         <ArticleContent blocks={articleStore.article?.content || []} />
         <Divider />
         <ArticleFooter
           id={Number(id)}
-          name={articleStore.article?.user.username || ''}
+          name={articleStore.article?.user?.username || ''}
           date={articleStore.article?.createdAt || ''}
+          category={articleStore.article?.category?.name || ''}
         />
         <Divider />
+        <Comments />
       </Paper>
     </Container>
   );

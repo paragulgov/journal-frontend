@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { observer } from 'mobx-react-lite';
 import EditorJS, { OutputBlockData } from '@editorjs/editorjs';
 import Header from '@editorjs/header';
 
@@ -8,7 +7,7 @@ interface IEditorProps {
   initialValue: OutputBlockData[];
 }
 
-const Editor: React.FC<IEditorProps> = observer(props => {
+const Editor: React.FC<IEditorProps> = props => {
   const { handleChange, initialValue } = props;
 
   // Effects
@@ -37,6 +36,6 @@ const Editor: React.FC<IEditorProps> = observer(props => {
   return (
     <div id="editorjs" />
   );
-});
+};
 
 export default Editor;
