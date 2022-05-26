@@ -8,11 +8,11 @@ import BookmarkAddIcon from '@mui/icons-material/BookmarkAdd';
 import BookmarkRemoveIcon from '@mui/icons-material/BookmarkRemove';
 import ShareIcon from '@mui/icons-material/Share';
 
-interface PostCardActionsProps {
+interface IPostCardActionsProps {
   likesCount: number
 }
 
-const PostCardActions: React.FC<PostCardActionsProps> = ({likesCount}) => {
+const PostCardActions: React.FC<IPostCardActionsProps> = ({likesCount}) => {
   return (
     <Box>
       <Stack direction="row" spacing={2}>

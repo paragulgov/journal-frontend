@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image'
 import NavbarLinkItem from './NavbarLinkItem';
 import { Box, Stack } from '@mui/material';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
@@ -8,7 +7,6 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import ListIcon from '@mui/icons-material/List';
 import CheckIcon from '@mui/icons-material/Check';
-import internet from "../../../public/assets/categories/icons/internet.webp";
 
 const Navbar: React.FC = () => {
   return (
@@ -33,12 +31,12 @@ const Navbar: React.FC = () => {
         </Stack>
 
         <Stack spacing={1}>
-          <NavbarLinkItem active icon={<Image src={internet} width={24} height={24} alt="Интернет" />}>Интернет</NavbarLinkItem>
-          <NavbarLinkItem icon={<Image src={internet} width={24} height={24} alt="Технологии" />}>Технологии</NavbarLinkItem>
-          <NavbarLinkItem icon={<Image src={internet} width={24} height={24} alt="Новости" />}>Новости</NavbarLinkItem>
-          <NavbarLinkItem icon={<Image src={internet} width={24} height={24} alt="Разборы" />}>Разборы</NavbarLinkItem>
-          <NavbarLinkItem icon={<Image src={internet} width={24} height={24} alt="Telegram" />}>Telegram</NavbarLinkItem>
-          <NavbarLinkItem icon={<Image src={internet} width={24} height={24} alt="Промо" />}>Промо</NavbarLinkItem>
+          <NavbarLinkItem active>Интернет</NavbarLinkItem>
+          <NavbarLinkItem>Технологии</NavbarLinkItem>
+          <NavbarLinkItem>Новости</NavbarLinkItem>
+          <NavbarLinkItem>Разборы</NavbarLinkItem>
+          <NavbarLinkItem>Telegram</NavbarLinkItem>
+          <NavbarLinkItem>Промо</NavbarLinkItem>
         </Stack>
       </Box>
     </Box>

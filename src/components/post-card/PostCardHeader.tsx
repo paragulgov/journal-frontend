@@ -5,13 +5,13 @@ import PostCardMenu from './PostCardMenu';
 import { IUserModel } from '../../modules/user/types/UserTypes';
 import ArticleDate from '../ArticleDate';
 
-interface PostCardHeaderProps {
+interface IPostCardHeaderProps {
   id: number;
   user: IUserModel;
   date: string;
 }
 
-const PostCardHeader: React.FC<PostCardHeaderProps> = ({ id, user, date }) => {
+const PostCardHeader: React.FC<IPostCardHeaderProps> = ({ id, user, date }) => {
 
   return (
     <Box display="flex" alignItems="center" mb={2}>

@@ -2,12 +2,12 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from '@mui/material';
 
-interface NavbarItemProps {
+interface INavbarItemProps {
   active?: boolean;
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
 }
 
-const NavbarLinkItem: React.FC<NavbarItemProps> = (props) => {
+const NavbarLinkItem: React.FC<INavbarItemProps> = (props) => {
   const { children, active = false, icon } = props;
 
   return (

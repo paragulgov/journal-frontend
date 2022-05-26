@@ -21,6 +21,7 @@ const ArticleScreen = observer(() => {
   useEffect(() => {
     if (id) {
       articleStore.getOne(Number(id));
+      articleStore.getComments(Number(id));
     }
 
     return () => {

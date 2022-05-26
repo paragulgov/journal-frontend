@@ -3,14 +3,14 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-interface PostCardContentProps {
+interface IPostCardContentProps {
   id: number;
   title: string;
   subtitle: string;
   image: string;
 }
 
-const PostCardContent: React.FC<PostCardContentProps> = ({ id, title, subtitle, image }) => {
+const PostCardContent: React.FC<IPostCardContentProps> = ({ id, title, subtitle, image }) => {
   return (
     <Box mb={1}>
       <Link href={`/article/${id}`}>

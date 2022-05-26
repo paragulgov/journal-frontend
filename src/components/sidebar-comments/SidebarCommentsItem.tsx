@@ -4,13 +4,13 @@ import UserAvatarName from '../UserAvatarName';
 import Link from 'next/link';
 import { HoverTypography } from '../../styles/commonStyles';
 
-interface CommentsItemProps {
+interface ICommentsItemProps {
   user: string;
   post: string;
   comment: string;
 }
 
-const SidebarCommentsItem: React.FC<CommentsItemProps> = ({ user, comment, post }) => {
+const SidebarCommentsItem: React.FC<ICommentsItemProps> = ({ user, comment, post }) => {
   return (
     <Box>
       <Box mb={1}>

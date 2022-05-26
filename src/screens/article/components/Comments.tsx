@@ -1,36 +1,59 @@
 import React, { useState } from 'react';
 import { Box, Button, Stack, TextField, Typography } from '@mui/material';
+import { observer } from 'mobx-react-lite';
 import CommentsItem from './CommentsItem';
+import { useRootStore } from '../../../base/hooks/useRootStore';
 
-const Comments = () => {
+const Comments = observer(() => {
+  const { articleStore } = useRootStore();
+
   const [clicked, setClicked] = useState<boolean>(false);
 
+  // Handlers
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+
+    articleStore.setCommentValues({
+      ...articleStore.commentValues,
+      [name]: value,
+    });
+  };
+
+  const handleSubmitComment = () => {
+      articleStore.createComment();
+  };
+
+  // Renders
   return (
     <Box sx={{ paddingTop: 5 }}>
       <Box mb={3}>
         <Typography variant="h6" mb={2}>Комментарии</Typography>
 
         <TextField
-          placeholder="Написать комментарий..."
-          minRows={clicked ? 5 : 1}
+          name="text"
+          onChange={handleChange}
+          value={articleStore.commentValues.text}
           onFocus={() => setClicked(true)}
+          minRows={clicked ? 5 : 1}
+          placeholder="Написать комментарий..."
           multiline
           fullWidth
         />
-        <Button variant="contained" sx={{ mt: 2 }}>
+
+        <Button onClick={handleSubmitComment} variant="contained" sx={{ my: 2 }}>
           Отправить
         </Button>
       </Box>
 
       <Stack spacing={6}>
-        {[...new Array(3)].map((_, index) => {
+        {articleStore.comments.map(comment => {
           return (
-            <CommentsItem key={index} />
+            <CommentsItem key={comment.id} comment={comment} />
           );
         })}
       </Stack>
     </Box>
   );
-};
+});
 
 export default Comments;

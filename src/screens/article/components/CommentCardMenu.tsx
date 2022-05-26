@@ -2,10 +2,10 @@ import React from 'react';
 import { IconButton, Menu, MenuItem } from '@mui/material';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
-interface PostCardMenuProps {
+interface ICommentCardMenuProps {
 }
 
-const PostCardMenu: React.FC<PostCardMenuProps> = () => {
+const CommentCardMenu: React.FC<ICommentCardMenuProps> = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
   const open = Boolean(anchorEl);
@@ -36,4 +36,4 @@ const PostCardMenu: React.FC<PostCardMenuProps> = () => {
   );
 };
 
-export default PostCardMenu;
+export default CommentCardMenu;

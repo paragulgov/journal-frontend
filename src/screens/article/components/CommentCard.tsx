@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, IconButton, Stack, Typography } from '@mui/material';
+import { Card, CardContent, IconButton, Stack, Typography, Box } from '@mui/material';
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import ThumbDownAltOutlinedIcon from '@mui/icons-material/ThumbDownAltOutlined';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
@@ -7,20 +7,33 @@ import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt';
 import UserAvatarName from '../../../components/UserAvatarName';
 import TextButton from '../../../components/UI/TextButton';
 import { HoverTypography } from '../../../styles/commonStyles';
+import CommentCardMenu from './CommentCardMenu';
+import { IUserModel } from '../../../modules/user/types/UserTypes';
 
-const CommentsItem = () => {
+interface ICommentCardProps {
+  user: IUserModel;
+  text: string;
+  createdAt: string;
+}
+
+const CommentCard: React.FC<ICommentCardProps> = props => {
+  const { user, text, createdAt } = props;
+
   return (
     <Card sx={{ boxShadow: 'none' }}>
-      <Stack direction="row" alignItems="center" spacing={3}>
-        <UserAvatarName name="Telegram" />
-        <HoverTypography sx={{ color: 'text.secondary', cursor: 'default' }}>
-          Сегодня
+      <Box display="flex" alignItems="center">
+        <UserAvatarName name={user.username} />
+
+        <HoverTypography sx={{ color: 'text.secondary', cursor: 'default', ml: 3 }}>
+          {createdAt}
         </HoverTypography>
-      </Stack>
+
+        <Box flexGrow={1} />
+
+        <CommentCardMenu />
+      </Box>
       <CardContent sx={{ paddingLeft: 0 }}>
-        Helo Helo Helo Helo Helo Helo Helo Helo Helo Helo Helo Helo Helo Helo
-        HeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHeloHelo
-        Helo HeloHeloHeloHeloHelo Helo Helo Helo Helo Helo Helo Helo
+        {text}
       </CardContent>
       <Stack direction="row" spacing={2}>
         <TextButton>
@@ -45,4 +58,4 @@ const CommentsItem = () => {
   );
 };
 
-export default CommentsItem;
+export default CommentCard;

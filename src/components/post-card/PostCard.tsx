@@ -5,7 +5,7 @@ import PostCardContent from './PostCardContent';
 import PostCardActions from './PostCardActions';
 import { IUserModel } from '../../modules/user/types/UserTypes';
 
-interface PostCardProps {
+interface IPostCardProps {
   id: number;
   date: string;
   title: string;
@@ -15,7 +15,7 @@ interface PostCardProps {
   user: IUserModel;
 }
 
-const PostCard: React.FC<PostCardProps> = (props) => {
+const PostCard: React.FC<IPostCardProps> = (props) => {
   const { id, title, subtitle, date, img, likesCount, user } = props;
 
   return (

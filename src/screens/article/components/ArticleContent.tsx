@@ -17,6 +17,7 @@ const ArticleContent: React.FC<IArticleContentProps> = ({ blocks }) => {
         header: Header,
       },
       readOnly: true,
+      minHeight: 50,
     });
 
     return () => {
