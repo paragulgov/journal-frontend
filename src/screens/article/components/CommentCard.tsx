@@ -9,6 +9,7 @@ import TextButton from '../../../components/UI/TextButton';
 import { HoverTypography } from '../../../styles/commonStyles';
 import CommentCardMenu from './CommentCardMenu';
 import { IUserModel } from '../../../modules/user/types/UserTypes';
+import FormattedDate from '../../../components/FormattedDate';
 
 interface ICommentCardProps {
   user: IUserModel;
@@ -25,7 +26,7 @@ const CommentCard: React.FC<ICommentCardProps> = props => {
         <UserAvatarName name={user.username} />
 
         <HoverTypography sx={{ color: 'text.secondary', cursor: 'default', ml: 3 }}>
-          {createdAt}
+          <FormattedDate date={createdAt} />
         </HoverTypography>
 
         <Box flexGrow={1} />
