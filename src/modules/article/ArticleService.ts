@@ -1,5 +1,5 @@
 import ArticleApi from './ArticleApi';
-import { ICommentDto, ICommentValues } from './types/ArticleTypes';
+import { ICommentValues, ILikeDto } from './types/ArticleTypes';
 
 export default class ArticleService {
   getOne = async (id: number) => {
@@ -14,4 +14,8 @@ export default class ArticleService {
     const res = await ArticleApi.createComment(id, data);
     return res.data;
   };
+  createLikeDislike = async (id: number, data: ILikeDto) => {
+    const res = await ArticleApi.createLikeDislike(id, data);
+    return res.data;
+  }
 }

@@ -5,8 +5,11 @@ import DescriptionIcon from '@mui/icons-material/Description';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import HeaderMenuLink from './HeaderMenuLink';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import { observer } from 'mobx-react-lite';
+import { useRootStore } from '../../base/hooks/useRootStore';
 
-const HeaderAuth: React.FC = () => {
+const HeaderAuth: React.FC = observer(() => {
+  const { userStore } = useRootStore();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
   const open = Boolean(anchorEl);
@@ -29,7 +32,7 @@ const HeaderAuth: React.FC = () => {
         {/*  height={40}*/}
         {/*  alt="Аватарка"*/}
         {/*/>*/}
-        <Avatar>R</Avatar>
+        <Avatar>{userStore?.userInfo?.username[0]}</Avatar>
       </IconButton>
 
       <Menu
@@ -57,6 +60,6 @@ const HeaderAuth: React.FC = () => {
       </Menu>
     </Box>
   );
-};
+});
 
 export default HeaderAuth;

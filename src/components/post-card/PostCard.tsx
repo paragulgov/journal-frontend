@@ -11,12 +11,12 @@ interface IPostCardProps {
   title: string;
   subtitle: string;
   img: string;
-  likesCount: number;
+  commentsCount: number;
   user: IUserModel;
 }
 
 const PostCard: React.FC<IPostCardProps> = (props) => {
-  const { id, title, subtitle, date, img, likesCount, user } = props;
+  const { id, title, subtitle, date, img, commentsCount, user } = props;
 
   return (
     <Card sx={{ px: 2.5, py: 2 }}>
@@ -24,7 +24,7 @@ const PostCard: React.FC<IPostCardProps> = (props) => {
 
       <PostCardContent id={id} image={img} subtitle={subtitle} title={title} />
 
-      <PostCardActions likesCount={likesCount} />
+      <PostCardActions commentsCount={commentsCount} />
     </Card>
   );
 };

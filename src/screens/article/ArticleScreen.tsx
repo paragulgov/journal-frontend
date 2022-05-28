@@ -29,6 +29,12 @@ const ArticleScreen = observer(() => {
     };
   }, [id]);
 
+  useEffect(() => {
+    if (articleStore.article) {
+      articleStore.checkLikeDislike();
+    }
+  }, [articleStore.article]);
+
   // Renders
   if (articleStore.loading) {
     return <Loader />;
@@ -39,12 +45,7 @@ const ArticleScreen = observer(() => {
       <Paper sx={{ color: '#fff', padding: 5, borderRadius: 2, mb: 2 }}>
         <ArticleContent blocks={articleStore.article?.content || []} />
         <Divider />
-        <ArticleFooter
-          id={Number(id)}
-          name={articleStore.article?.user?.username || ''}
-          date={articleStore.article?.createdAt || ''}
-          category={articleStore.article?.category?.name || ''}
-        />
+        <ArticleFooter id={Number(id)} />
         <Divider />
         <Comments />
       </Paper>

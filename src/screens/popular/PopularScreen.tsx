@@ -15,11 +15,11 @@ const PopularScreen: React.FC = observer(() => {
 
   // Renders
   return (
-    <Container maxWidth="md" sx={{pb: 1}}>
+    <Container maxWidth="md" sx={{ pb: 1 }}>
       <Stack spacing={3}>
         <LatestPosts />
 
-        {popularStore.popularArticles.map(({ id, title, subtitle, user, category, createdAt }) => {
+        {popularStore.popularArticles.map(({ id, title, subtitle, user, category, createdAt, comments }) => {
           return (
             <PostCard
               key={id}
@@ -28,7 +28,7 @@ const PopularScreen: React.FC = observer(() => {
               subtitle={subtitle}
               img={'https://via.placeholder.com/1280x720'}
               date={createdAt}
-              likesCount={99}
+              commentsCount={comments.length}
               user={user}
             />
           );

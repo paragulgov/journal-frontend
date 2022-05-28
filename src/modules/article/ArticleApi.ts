@@ -1,6 +1,6 @@
 import { instance } from '../../base/axios/instance';
 import { IArticleModel } from '../../types/types';
-import { ICommentDto, ICommentModel } from './types/ArticleTypes';
+import { ICommentDto, ICommentModel, ILikeDto, ILikeModel } from './types/ArticleTypes';
 
 const ArticleApi = {
   getOne(id: number) {
@@ -11,7 +11,10 @@ const ArticleApi = {
   },
   createComment(id: number, data: ICommentDto) {
     return instance.post<ICommentModel>(`/comments/${id}`, data);
-  }
+  },
+  createLikeDislike(articleId: number, data: ILikeDto) {
+    return instance.post<ILikeModel>(`/like/article/${articleId}`, data);
+  },
 };
 
 export default ArticleApi;

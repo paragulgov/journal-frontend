@@ -17,3 +17,12 @@ export interface ICommentValues {
 export interface ICommentDto {
   text: string;
 }
+
+export interface ILikeModel {
+  type: 'like' | 'unlike' | 'dislike' | 'undislike';
+  message: string;
+}
+
+export interface ILikeDto {
+  type: 'like' | 'dislike';
+}
