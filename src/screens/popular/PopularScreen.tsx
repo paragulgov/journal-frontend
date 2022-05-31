@@ -3,7 +3,7 @@ import { Container, Stack } from '@mui/material';
 import { observer } from 'mobx-react-lite';
 import LatestPosts from './components/LatestPosts';
 import PostCard from '../../components/post-card/PostCard';
-import { useRootStore } from '../../base/hooks/useRootStore';
+import { useRootStore } from '../../hooks/useRootStore';
 
 const PopularScreen: React.FC = observer(() => {
   const { popularStore } = useRootStore();

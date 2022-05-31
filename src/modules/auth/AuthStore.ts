@@ -1,11 +1,11 @@
 import { makeAutoObservable } from 'mobx';
 import { IRegisterValues } from './types/RegisterTypes';
 import AuthService from './AuthService';
-import { instance } from '../../base/axios/instance';
-import { ErrorsHandling } from '../../base/utils/ErrorsHandling';
-import Notification from '../../base/utils/NotificationUtil';
+import { instance } from '../../axios/instance';
+import { ErrorsHandling } from '../../utils/ErrorsHandling';
+import Notification from '../../utils/NotificationUtil';
 import { ILoginValues } from './types/LoginTypes';
-import { rootStore } from '../../base/RootStore';
+import { rootStore } from '../../store/RootStore';
 
 const initialRegisterValues: IRegisterValues = {
   username: '',

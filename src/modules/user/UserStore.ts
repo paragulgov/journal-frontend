@@ -1,8 +1,8 @@
 import { makeAutoObservable } from 'mobx';
 import UserService from './UserService';
-import { Nullable } from '../../base/types/BaseTypes';
 import { IUserModel } from './types/UserTypes';
-import { rootStore } from '../../base/RootStore';
+import { rootStore } from '../../store/RootStore';
+import { Nullable } from '../../types/types';
 
 export class UserStore {
   loading: boolean = false;

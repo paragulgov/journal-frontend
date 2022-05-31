@@ -8,7 +8,7 @@ import { ReactNotifications } from 'react-notifications-component';
 import 'react-notifications-component/dist/theme.css';
 import SEO from '../src/components/SEO';
 import { theme } from '../src/styles/muiTheme';
-import { useRootStore } from '../src/base/hooks/useRootStore';
+import { useRootStore } from '../src/hooks/useRootStore';
 import Loader from '../src/components/UI/Loader';
 
 const MyApp = observer(({ Component, pageProps }: AppProps) => {

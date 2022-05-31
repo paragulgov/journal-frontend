@@ -1,10 +1,12 @@
 import { IUserModel } from '../../user/types/UserTypes';
+import { IArticleModel } from '../../../types/types';
 
 export interface ICommentModel {
   id: number;
   text: string;
 
   user: IUserModel;
+  article?: IArticleModel;
 
   createdAt: string;
   updatedAt: string;

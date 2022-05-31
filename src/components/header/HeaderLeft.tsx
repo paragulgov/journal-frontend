@@ -5,7 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import Image from 'next/image';
 import Link from 'next/link';
 import { observer } from 'mobx-react-lite';
-import { useRootStore } from '../../base/hooks/useRootStore';
+import { useRootStore } from '../../hooks/useRootStore';
 
 const HeaderLeft: React.FC = observer(() => {
   const { authStore } = useRootStore();
@@ -46,8 +46,11 @@ const HeaderLeft: React.FC = observer(() => {
 
       {authStore.isAuth && (
         <Link href="/write">
-          <Button variant="contained" color="primary" sx={{ '&:hover': { background: '#90caf9' } }}>Новая
-            запись</Button>
+          <a>
+            <Button variant="contained" color="primary" sx={{ '&:hover': { background: '#90caf9' } }}>
+              Новая запись
+            </Button>
+          </a>
         </Link>
       )}
     </Box>

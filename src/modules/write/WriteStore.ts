@@ -1,9 +1,9 @@
 import { makeAutoObservable } from 'mobx';
 import { OutputBlockData } from '@editorjs/editorjs';
 import WriteService from './WriteService';
-import { Nullable } from '../../base/types/BaseTypes';
-import { ErrorsHandling } from '../../base/utils/ErrorsHandling';
-import Notification from '../../base/utils/NotificationUtil';
+import { ErrorsHandling } from '../../utils/ErrorsHandling';
+import Notification from '../../utils/NotificationUtil';
+import { Nullable } from '../../types/types';
 
 export class WriteStore {
   loading: boolean = false;

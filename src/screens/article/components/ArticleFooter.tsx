@@ -1,12 +1,12 @@
 import React from 'react';
-import { Box, IconButton, Stack } from '@mui/material';
+import { Box, IconButton, Stack, Typography } from '@mui/material';
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import ThumbDownAltOutlinedIcon from '@mui/icons-material/ThumbDownAltOutlined';
 import UserAvatarName from '../../../components/UserAvatarName';
 import ArticleDate from '../../../components/ArticleDate';
 import { HoverTypography } from '../../../styles/commonStyles';
 import { observer } from 'mobx-react-lite';
-import { useRootStore } from '../../../base/hooks/useRootStore';
+import { useRootStore } from '../../../hooks/useRootStore';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt';
 
@@ -38,23 +38,35 @@ const ArticleFooter: React.FC<IArticleFooterProps> = observer(({ id }) => {
       </Box>
 
       {articleStore.likedArticle ? (
-        <IconButton onClick={handleLike}>
-          <ThumbUpIcon />
-        </IconButton>
+        <Box display="flex" alignItems="center">
+          <IconButton onClick={handleLike}>
+            <ThumbUpIcon />
+          </IconButton>
+          <Typography>{articleStore.article?.likesCount}</Typography>
+        </Box>
       ) : (
-        <IconButton onClick={handleLike}>
-          <ThumbUpOutlinedIcon />
-        </IconButton>
+        <Box display="flex" alignItems="center">
+          <IconButton onClick={handleLike}>
+            <ThumbUpOutlinedIcon />
+          </IconButton>
+          <Typography>{articleStore.article?.likesCount}</Typography>
+        </Box>
       )}
 
       {articleStore.dislikedArticle ? (
-        <IconButton onClick={handleDislike}>
-          <ThumbDownAltIcon />
-        </IconButton>
+        <Box display="flex" alignItems="center">
+          <IconButton onClick={handleDislike}>
+            <ThumbDownAltIcon />
+          </IconButton>
+          <Typography>{articleStore.article?.dislikesCount}</Typography>
+        </Box>
       ) : (
-        <IconButton onClick={handleDislike}>
-          <ThumbDownAltOutlinedIcon />
-        </IconButton>
+        <Box display="flex" alignItems="center">
+          <IconButton onClick={handleDislike}>
+            <ThumbDownAltOutlinedIcon />
+          </IconButton>
+          <Typography>{articleStore.article?.dislikesCount}</Typography>
+        </Box>
       )}
 
     </Stack>

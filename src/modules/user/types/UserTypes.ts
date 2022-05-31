@@ -1,4 +1,4 @@
-import { Nullable } from '../../../base/types/BaseTypes';
+import { Nullable } from '../../../types/types';
 
 export interface IUserModel {
   id: number;

@@ -23,7 +23,7 @@ const CommentCard: React.FC<ICommentCardProps> = props => {
   return (
     <Card sx={{ boxShadow: 'none' }}>
       <Box display="flex" alignItems="center">
-        <UserAvatarName name={user.username} />
+        <UserAvatarName name={user?.username} />
 
         <HoverTypography sx={{ color: 'text.secondary', cursor: 'default', ml: 3 }}>
           <FormattedDate date={createdAt} />

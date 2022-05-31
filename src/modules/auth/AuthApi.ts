@@ -1,4 +1,4 @@
-import { instance } from '../../base/axios/instance';
+import { instance } from '../../axios/instance';
 import { IRegisterDto, IRegisterModel } from './types/RegisterTypes';
 import { ILoginDto, ILoginModel } from './types/LoginTypes';
 

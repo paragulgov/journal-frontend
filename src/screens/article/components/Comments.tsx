@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, Button, Stack, TextField, Typography } from '@mui/material';
 import { observer } from 'mobx-react-lite';
 import CommentsItem from './CommentsItem';
-import { useRootStore } from '../../../base/hooks/useRootStore';
+import { useRootStore } from '../../../hooks/useRootStore';
 
 const Comments = observer(() => {
   const { articleStore } = useRootStore();

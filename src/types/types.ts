@@ -24,3 +24,5 @@ export interface ILike {
   type: 'like' | 'dislike';
   user: IUserModel;
 }
+
+export type Nullable<T> = T | null;

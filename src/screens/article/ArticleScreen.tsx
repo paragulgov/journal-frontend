@@ -3,7 +3,7 @@ import { Container, Divider, Paper } from '@mui/material';
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 import { observer } from 'mobx-react-lite';
-import { useRootStore } from '../../base/hooks/useRootStore';
+import { useRootStore } from '../../hooks/useRootStore';
 import Loader from '../../components/UI/Loader';
 import ArticleFooter from './components/ArticleFooter';
 import Comments from './components/Comments';

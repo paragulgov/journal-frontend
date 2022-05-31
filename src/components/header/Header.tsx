@@ -4,7 +4,7 @@ import { observer } from 'mobx-react-lite';
 import HeaderLeft from './HeaderLeft';
 import HeaderAuth from './HeaderAuth';
 import HeaderGuest from './HeaderGuest';
-import { useRootStore } from '../../base/hooks/useRootStore';
+import { useRootStore } from '../../hooks/useRootStore';
 
 const Header: React.FC = observer(() => {
   const { authStore } = useRootStore();

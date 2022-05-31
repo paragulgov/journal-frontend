@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import React from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Link from 'next/link';
 
 interface IPostCardContentProps {
@@ -19,7 +19,7 @@ const PostCardContent: React.FC<IPostCardContentProps> = ({ id, title, subtitle,
           <Typography variant="subtitle1" mb={1}>
             {subtitle}
           </Typography>
-          <Image src={image} width={800} height={300} alt="Изображение" />
+          {/*<Image src={image} width={800} height={300} alt="Изображение" />*/}
         </a>
       </Link>
     </Box>

@@ -4,7 +4,7 @@ import { Autocomplete, Box, Button, Container, TextField } from '@mui/material';
 import { observer } from 'mobx-react-lite';
 import { OutputBlockData } from '@editorjs/editorjs';
 import { useRouter } from 'next/router';
-import { useRootStore } from '../../base/hooks/useRootStore';
+import { useRootStore } from '../../hooks/useRootStore';
 import Loader from '../../components/UI/Loader';
 
 // @ts-ignore

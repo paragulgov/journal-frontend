@@ -1,7 +1,6 @@
-import { instance } from '../../base/axios/instance';
+import { instance } from '../../axios/instance';
 import { IArticleDto} from './types/WriteTypes';
-import { Nullable } from '../../base/types/BaseTypes';
-import { IArticleModel } from '../../types/types';
+import { IArticleModel, Nullable } from '../../types/types';
 
 const WriteApi = {
   getArticle(id: number) {

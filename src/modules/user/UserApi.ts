@@ -1,4 +1,4 @@
-import { instance } from '../../base/axios/instance';
+import { instance } from '../../axios/instance';
 import { IUserModel } from './types/UserTypes';
 
 const UserApi = {

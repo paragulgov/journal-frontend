@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite';
 import { Box, Button, ModalProps, Stack, TextField, Typography } from '@mui/material';
 import Modal from '../../../components/UI/Modal';
 import TextButton from '../../../components/UI/TextButton';
-import { useRootStore } from '../../../base/hooks/useRootStore';
+import { useRootStore } from '../../../hooks/useRootStore';
 
 interface IRegisterModalProps extends Omit<ModalProps, 'children'> {
 }

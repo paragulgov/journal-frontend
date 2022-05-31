@@ -1,4 +1,4 @@
-import { instance } from '../../base/axios/instance';
+import { instance } from '../../axios/instance';
 import { IArticleModel } from '../../types/types';
 import { ICommentDto, ICommentModel, ILikeDto, ILikeModel } from './types/ArticleTypes';
 

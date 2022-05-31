@@ -1,5 +1,5 @@
 import { OutputBlockData } from '@editorjs/editorjs';
-import { Nullable } from '../../../base/types/BaseTypes';
+import { Nullable } from '../../../types/types';
 
 export interface IArticleDto {
   content: OutputBlockData[];

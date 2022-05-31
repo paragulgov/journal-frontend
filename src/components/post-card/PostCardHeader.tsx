@@ -21,7 +21,7 @@ const PostCardHeader: React.FC<IPostCardHeaderProps> = ({ id, user, date }) => {
 
       <Box flexGrow={1} />
 
-      <PostCardMenu />
+      <PostCardMenu userId={user.id} articleId={id}/>
     </Box>
   );
 };

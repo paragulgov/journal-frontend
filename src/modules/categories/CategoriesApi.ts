@@ -1,4 +1,4 @@
-import { instance } from '../../base/axios/instance';
+import { instance } from '../../axios/instance';
 import { ICategoryModel } from './types/CategoriesTypes';
 
 const CategoriesApi = {

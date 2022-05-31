@@ -1,19 +1,21 @@
 import React from 'react';
 import { Avatar, Box, IconButton, Menu, Typography } from '@mui/material';
-import Image from 'next/image';
+// import Image from 'next/image';
 import DescriptionIcon from '@mui/icons-material/Description';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import HeaderMenuLink from './HeaderMenuLink';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import { observer } from 'mobx-react-lite';
-import { useRootStore } from '../../base/hooks/useRootStore';
+import { useRootStore } from '../../hooks/useRootStore';
 
 const HeaderAuth: React.FC = observer(() => {
   const { userStore } = useRootStore();
+
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
   const open = Boolean(anchorEl);
 
+  // Handlers
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
@@ -22,6 +24,7 @@ const HeaderAuth: React.FC = observer(() => {
     setAnchorEl(null);
   };
 
+  // Renders
   return (
     <Box display="flex" alignItems="center">
       <IconButton onClick={handleClick} disableRipple>
@@ -43,14 +46,15 @@ const HeaderAuth: React.FC = observer(() => {
         <Typography sx={{ color: 'text.secondary', px: 1.5, my: 1 }}>Профиль</Typography>
 
         <HeaderMenuLink
-          href="/" text="Мой профиль"
+          href="/user" text="Мой профиль"
           icon={
-            <Image
-              style={{ borderRadius: 6 }}
-              src="/assets/categories/icons/internet.webp"
-              width={20}
-              height={20} alt="Аватарка"
-            />
+            // <Image
+            //   style={{ borderRadius: 6 }}
+            //   src="/assets/categories/icons/internet.webp"
+            //   width={20}
+            //   height={20} alt="Аватарка"
+            // />
+            <Avatar sx={{ width: 24, height: 24, fontSize: 12 }}>{userStore?.userInfo?.username[0]}</Avatar>
           }
         />
         <HeaderMenuLink href="/" text="Черновики" icon={<DescriptionIcon fontSize="small" />} />

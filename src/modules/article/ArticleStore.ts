@@ -1,11 +1,10 @@
 import { makeAutoObservable } from 'mobx';
-import { IArticleModel } from '../../types/types';
+import { IArticleModel, Nullable } from '../../types/types';
 import ArticleService from './ArticleService';
-import { Nullable } from '../../base/types/BaseTypes';
 import { ICommentModel, ICommentValues, ILikeDto } from './types/ArticleTypes';
-import { ErrorsHandling } from '../../base/utils/ErrorsHandling';
-import { rootStore } from '../../base/RootStore';
-import Notification from '../../base/utils/NotificationUtil';
+import { ErrorsHandling } from '../../utils/ErrorsHandling';
+import { rootStore } from '../../store/RootStore';
+import Notification from '../../utils/NotificationUtil';
 
 const initialCommentValues: ICommentValues = { text: '' };
 

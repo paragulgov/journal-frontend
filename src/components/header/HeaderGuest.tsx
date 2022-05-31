@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite';
 import { Box, Button } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
 import LoginModal from '../../screens/auth/login/LoginModal';
-import { useRootStore } from '../../base/hooks/useRootStore';
+import { useRootStore } from '../../hooks/useRootStore';
 import RegisterModal from '../../screens/auth/register/RegisterModal';
 
 const HeaderGuest: React.FC = observer(() => {

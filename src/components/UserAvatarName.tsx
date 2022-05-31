@@ -24,7 +24,7 @@ const UserAvatarName: React.FC<IUserAvatarNameProps> = ({ name }) => {
         >
           <Box mr={1}>
             <Avatar>
-              {name.slice(0, 1)}
+              {name?.slice(0, 1)}
             </Avatar>
           </Box>
           <Typography>{name}</Typography>

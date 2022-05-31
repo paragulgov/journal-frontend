@@ -1,7 +1,7 @@
 import WriteApi from './WriteApi';
 import { OutputBlockData } from '@editorjs/editorjs';
 import { IArticleDto } from './types/WriteTypes';
-import { Nullable } from '../../base/types/BaseTypes';
+import { Nullable } from '../../types/types';
 
 export default class WriteService {
   getArticle = async (id: number) => {
