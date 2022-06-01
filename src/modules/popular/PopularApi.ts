@@ -3,7 +3,7 @@ import { IArticleModel } from '../../types/types';
 
 const PopularApi = {
   getPopular() {
-    return instance.get<IArticleModel[]>(`/articles`);
+    return instance.get<IArticleModel[]>(`/articles/popular`);
   },
 };
 

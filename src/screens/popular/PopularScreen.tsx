@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Container, Stack } from '@mui/material';
 import { observer } from 'mobx-react-lite';
-import LatestPosts from './components/LatestPosts';
+// import LatestPosts from './components/LatestPosts';
 import PostCard from '../../components/post-card/PostCard';
 import { useRootStore } from '../../hooks/useRootStore';
 
@@ -17,9 +17,9 @@ const PopularScreen: React.FC = observer(() => {
   return (
     <Container maxWidth="md" sx={{ pb: 1 }}>
       <Stack spacing={3}>
-        <LatestPosts />
+        {/*<LatestPosts />*/}
 
-        {popularStore.popularArticles.map(({ id, title, subtitle, user, category, createdAt, comments }) => {
+        {popularStore.popularArticles.map(({ id, title, subtitle, user, views, createdAt, comments }) => {
           return (
             <PostCard
               key={id}
@@ -30,6 +30,7 @@ const PopularScreen: React.FC = observer(() => {
               date={createdAt}
               commentsCount={comments.length}
               user={user}
+              views={views}
             />
           );
         })}

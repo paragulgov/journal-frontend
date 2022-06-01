@@ -9,6 +9,7 @@ import { observer } from 'mobx-react-lite';
 import { useRootStore } from '../../../hooks/useRootStore';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 
 interface IArticleFooterProps {
   id: number;
@@ -69,6 +70,10 @@ const ArticleFooter: React.FC<IArticleFooterProps> = observer(({ id }) => {
         </Box>
       )}
 
+      <Box display="flex" alignItems="center">
+        <VisibilityIcon sx={{ mr: 1 }} />
+        {articleStore.article?.views}
+      </Box>
     </Stack>
   );
 });

@@ -14,6 +14,7 @@ const HeaderAuth: React.FC = observer(() => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
   const open = Boolean(anchorEl);
+  const adminPanel = userStore?.userInfo?.role === 'admin' || userStore?.userInfo?.role === 'moderator';
 
   // Handlers
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -57,7 +58,7 @@ const HeaderAuth: React.FC = observer(() => {
             <Avatar sx={{ width: 24, height: 24, fontSize: 12 }}>{userStore?.userInfo?.username[0]}</Avatar>
           }
         />
-        <HeaderMenuLink href="/" text="Черновики" icon={<DescriptionIcon fontSize="small" />} />
+        {adminPanel && <HeaderMenuLink href="/admin" text="Админ панель" icon={<DescriptionIcon fontSize="small" />} />}
         <HeaderMenuLink href="/" text="Закладки" icon={<BookmarkBorderIcon fontSize="small" />} />
         <HeaderMenuLink href="/" text="Выйти" icon={<ExitToAppIcon fontSize="small" />} />
 

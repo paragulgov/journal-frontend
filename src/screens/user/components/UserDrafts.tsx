@@ -4,12 +4,12 @@ import { instance } from '../../../axios/instance';
 import PostCard from '../../../components/post-card/PostCard';
 import { IArticleModel } from '../../../types/types';
 
-const UserArticles = () => {
+const UserDrafts = () => {
   const [articles, setArticles] = useState<IArticleModel[]>([]);
 
   // Effects
   useEffect(() => {
-    instance.get<IArticleModel[]>('articles/user/published')
+    instance.get<IArticleModel[]>('articles/user/drafts')
       .then(res => {
         setArticles(res.data);
       });
@@ -18,7 +18,7 @@ const UserArticles = () => {
   // Renders
   return (
     <Stack spacing={3}>
-      {articles.map(({ id, title, subtitle, user, views, createdAt, comments }) => {
+      {articles.map(({ id, title, subtitle, user, views, createdAt, comments, status, rejected, rejectedReason }) => {
         return (
           <PostCard
             key={id}
@@ -30,6 +30,9 @@ const UserArticles = () => {
             commentsCount={comments.length}
             user={user}
             views={views}
+            status={status}
+            rejected={rejected}
+            rejectedReason={rejectedReason}
           />
         );
       })}
@@ -37,4 +40,4 @@ const UserArticles = () => {
   );
 };
 
-export default UserArticles;
+export default UserDrafts;

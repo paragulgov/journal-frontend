@@ -8,8 +8,12 @@ export interface IArticleModel {
   title: string;
   subtitle: string;
   content: OutputBlockData[];
-  likesCount: number;
-  dislikesCount: number;
+  likesCount?: number;
+  dislikesCount?: number;
+  views: number;
+  status: ArticleStatus;
+  rejected: false;
+  rejectedReason: string;
 
   comments: ICommentModel[];
   category: ICategoryModel;
@@ -24,5 +28,7 @@ export interface ILike {
   type: 'like' | 'dislike';
   user: IUserModel;
 }
+
+export type ArticleStatus = 'published' | 'pending' | 'rejected'
 
 export type Nullable<T> = T | null;
