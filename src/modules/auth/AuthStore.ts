@@ -41,6 +41,11 @@ export class AuthStore {
     return this.loginValues.username.length === 0 || this.loginValues.password.length === 0;
   }
 
+  logout = () => {
+    this.removeToken()
+    rootStore.userStore.resetStore()
+  }
+
   register = () => {
     this.authService.register(this.registerValues)
       .then((res) => {

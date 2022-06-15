@@ -1,11 +1,11 @@
 import React from 'react';
-import { Box, Button, IconButton, TextField } from '@mui/material';
+import { Box, Button, IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
 import Image from 'next/image';
 import Link from 'next/link';
 import { observer } from 'mobx-react-lite';
 import { useRootStore } from '../../hooks/useRootStore';
+import HeaderSearch from './HeaderSearch';
 
 const HeaderLeft: React.FC = observer(() => {
   const { authStore } = useRootStore();
@@ -20,29 +20,7 @@ const HeaderLeft: React.FC = observer(() => {
           <Image src="/assets/main/logo.svg" width={32} height={50} alt="Logo" />
         </a>
       </Link>
-      <TextField
-        variant="outlined"
-        placeholder="Поиск"
-        size="small"
-        autoComplete="off"
-        InputProps={{
-          startAdornment: <SearchIcon sx={{ mr: 1 }}>kg</SearchIcon>,
-        }}
-        sx={{
-          '& .MuiOutlinedInput-root': {
-            '& input::placeholder': {
-              color: '#fff',
-              opacity: 0.8,
-            },
-            '& fieldset': {
-              borderRadius: '8px',
-              border: 'none',
-              background: 'rgb(0 0 0 / 15%)',
-            },
-          },
-          mr: 2,
-        }}
-      />
+      <HeaderSearch />
 
       {authStore.isAuth && (
         <Link href="/write">

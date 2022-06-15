@@ -1,9 +1,7 @@
 import React from 'react';
-import { Card, CardContent, IconButton, Stack, Typography, Box } from '@mui/material';
+import { Box, Card, CardContent, IconButton, Stack, Typography } from '@mui/material';
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import ThumbDownAltOutlinedIcon from '@mui/icons-material/ThumbDownAltOutlined';
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt';
 import UserAvatarName from '../../../components/UserAvatarName';
 import TextButton from '../../../components/UI/TextButton';
 import { HoverTypography } from '../../../styles/commonStyles';
@@ -48,12 +46,12 @@ const CommentCard: React.FC<ICommentCardProps> = props => {
           <ThumbDownAltOutlinedIcon fontSize="small" />
         </IconButton>
 
-        <IconButton>
-          <ThumbUpIcon fontSize="small" />
-        </IconButton>
-        <IconButton>
-          <ThumbDownAltIcon fontSize="small" />
-        </IconButton>
+        {/*<IconButton>*/}
+        {/*  <ThumbUpIcon fontSize="small" />*/}
+        {/*</IconButton>*/}
+        {/*<IconButton>*/}
+        {/*  <ThumbDownAltIcon fontSize="small" />*/}
+        {/*</IconButton>*/}
       </Stack>
     </Card>
   );

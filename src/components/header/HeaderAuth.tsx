@@ -2,14 +2,14 @@ import React from 'react';
 import { Avatar, Box, IconButton, Menu, Typography } from '@mui/material';
 // import Image from 'next/image';
 import DescriptionIcon from '@mui/icons-material/Description';
-import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+// import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import HeaderMenuLink from './HeaderMenuLink';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import { observer } from 'mobx-react-lite';
 import { useRootStore } from '../../hooks/useRootStore';
 
 const HeaderAuth: React.FC = observer(() => {
-  const { userStore } = useRootStore();
+  const { userStore, authStore } = useRootStore();
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
@@ -23,6 +23,10 @@ const HeaderAuth: React.FC = observer(() => {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleLogout = () => {
+    authStore.logout();
   };
 
   // Renders
@@ -59,8 +63,8 @@ const HeaderAuth: React.FC = observer(() => {
           }
         />
         {adminPanel && <HeaderMenuLink href="/admin" text="Админ панель" icon={<DescriptionIcon fontSize="small" />} />}
-        <HeaderMenuLink href="/" text="Закладки" icon={<BookmarkBorderIcon fontSize="small" />} />
-        <HeaderMenuLink href="/" text="Выйти" icon={<ExitToAppIcon fontSize="small" />} />
+        {/*<HeaderMenuLink href="/" text="Закладки" icon={<BookmarkBorderIcon fontSize="small" />} />*/}
+        <HeaderMenuLink onClick={handleLogout} href="/" text="Выйти" icon={<ExitToAppIcon fontSize="small" />} />
 
       </Menu>
     </Box>

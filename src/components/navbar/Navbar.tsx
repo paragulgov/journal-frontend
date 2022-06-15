@@ -3,10 +3,6 @@ import NavbarLinkItem from './NavbarLinkItem';
 import { Box, Stack } from '@mui/material';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
-import ListIcon from '@mui/icons-material/List';
-import CheckIcon from '@mui/icons-material/Check';
 
 const Navbar: React.FC = () => {
   return (
@@ -24,14 +20,14 @@ const Navbar: React.FC = () => {
         <Stack spacing={1} mb={4}>
           <NavbarLinkItem active icon={<LocalFireDepartmentIcon />}>Популярное</NavbarLinkItem>
           <NavbarLinkItem icon={<AccessTimeIcon />}>Свежее</NavbarLinkItem>
-          <NavbarLinkItem icon={<CheckIcon />}>Моя лента</NavbarLinkItem>
-          <NavbarLinkItem icon={<BookmarkBorderIcon />}>Закладки</NavbarLinkItem>
-          <NavbarLinkItem icon={<TrendingUpIcon />}>Рейтинг</NavbarLinkItem>
-          <NavbarLinkItem icon={<ListIcon />}>Подписки</NavbarLinkItem>
+          {/*<NavbarLinkItem icon={<CheckIcon />}>Моя лента</NavbarLinkItem>*/}
+          {/*<NavbarLinkItem icon={<BookmarkBorderIcon />}>Закладки</NavbarLinkItem>*/}
+          {/*<NavbarLinkItem icon={<TrendingUpIcon />}>Рейтинг</NavbarLinkItem>*/}
+          {/*<NavbarLinkItem icon={<ListIcon />}>Подписки</NavbarLinkItem>*/}
         </Stack>
 
         <Stack spacing={1}>
-          <NavbarLinkItem active>Интернет</NavbarLinkItem>
+          <NavbarLinkItem>Интернет</NavbarLinkItem>
           <NavbarLinkItem>Технологии</NavbarLinkItem>
           <NavbarLinkItem>Новости</NavbarLinkItem>
           <NavbarLinkItem>Разборы</NavbarLinkItem>

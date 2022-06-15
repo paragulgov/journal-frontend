@@ -6,11 +6,12 @@ interface HeaderMenuLinkProps {
   href: string;
   text: string;
   icon: React.ReactNode;
+  onClick?: () => void;
 }
 
-const HeaderMenuLink: React.FC<HeaderMenuLinkProps> = ({ href, text, icon }) => {
+const HeaderMenuLink: React.FC<HeaderMenuLinkProps> = ({ href, text, icon, onClick }) => {
   return (
-    <MenuItem>
+    <MenuItem onClick={onClick}>
       <Link href={href}>
         <a style={{ display: 'flex', alignItems: 'center' }}>
           <ListItemIcon sx={{ minWidth: '28px !important' }}>
