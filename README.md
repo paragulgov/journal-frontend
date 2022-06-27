@@ -4,6 +4,12 @@
 
 [Data fetch](https://nextjs.org/docs/basic-features/data-fetching) фичи из Next не использовались, все запросы происходят в useEffect в компонентах.
 
+Demo: https://journal-frontend-theta.vercel.app/
+
+Login: admin
+
+Passowrd: admin1
+
 ## Getting Started
 
 First, run the development server:
